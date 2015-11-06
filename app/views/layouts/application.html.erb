@@ -9,6 +9,18 @@
 <body>
 <h1> Funding Match Site </h1>
 
+<div style="text-align: center; padding-bottom: 20px;">
+      <div style="display: inline;">
+        <% if current_user %>
+          Signed in as <%= current_user.user_name %> | <%= link_to "logout", "/logout" %>
+      <% else %>
+        <%= link_to "Login", "/login" %> | <%= link_to "Sign Up", new_user_path%>
+      <% end %>
+    </div>
+
+
+
+
 <%= yield %>
 
 </body>
