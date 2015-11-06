@@ -1,0 +1,18 @@
+<h1> User Profile </h1>
+<p>
+  <strong>User Name:</strong>
+  <%= @user.user_name %>
+</p>
+
+<p>
+  <strong>Company Name:</strong>
+  <%= @user.company_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @user.user_description %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
