@@ -10,3 +10,8 @@ User.create(user_name: 'Sarah', company_name: 'Clover Bakery', user_description:
 User.create(user_name: 'Robert', company_name: 'The Corner Stationary', user_description: 'stationary supplies', town: "Riverdale", capital_amount: '', score: '10', borrower: true, profile_photo: '', password_digest: 'Robert')
 User.create(user_name: 'Julia', company_name: 'The Coffe Clouds', user_description: 'hand pressed capuccino', town: "Spring Falls", capital_amount: '', score: '10', borrower: true, profile_photo: '', password_digest: 'Robert')
 User.create(user_name: 'John', company_name: 'The Tool Experts', user_description: 'hardware specialty tools', town: "Lakeview", capital_amount: '', score: '9', borrower: true, profile_photo: '', password_digest: 'Robert')
+
+
+# User.create(title: 'Restaurant kitchen renovation', loan_amount: 5,000, loan_description: 'increase the kitchen space to match the increasing demand', location: 'Cascades', category: 'restaurant', start_date: '', term: 36, interest_rate: .07, profile_photo: '', password_digest: '')
+# User.create(title: 'Restaurant kitchen renovation', loan_amount: 5,000, loan_description: 'increase the kitchen space to match the increasing demand', location: 'Cascades', category: 'restaurant', start_date: '', term: 36, interest_rate: .07, profile_photo: '', password_digest: '')
+# User.create(title: 'Restaurant kitchen renovation', loan_amount: 5,000, loan_description: 'increase the kitchen space to match the increasing demand', location: 'Cascades', category: 'restaurant', start_date: '', term: 36, interest_rate: .07, profile_photo: '', password_digest: '')

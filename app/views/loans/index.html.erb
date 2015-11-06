@@ -1,0 +1,13 @@
+<h2>Loans available for funding </h2>
+
+<ul>
+  <% @loans.each do |loan| %>
+  <li>
+    <div class="loan">
+      <h3><%= " #{loan.title}"%> </h3>
+      <h4><%= " by #{loan.user.user_name}" %></h4>
+      <p><%= loan.loan_description %></p>
+    </div>
+  </li>
+  <% end %>
+</ul>

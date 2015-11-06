@@ -1,0 +1,17 @@
+<%= form_for @loan, url: "/loans" do |f| %>
+
+<table>
+    <tr><td> Title: </td> <td> <%= f.text_field :title %> </td></tr>
+    <tr><td> Amount: </td> <td> <%= f.text_field :loan_amount %> </td></tr>
+
+    <tr><td> Description </td> <td> <%= f.text_area :loan_description %> </td></tr>
+    <tr><td> Location: </td> <td> <%= f.text_field :title %> </td></tr>
+    <tr><td> Category: </td> <td> <%= f.text_field :title %> </td></tr>
+    <tr><td> Start Date: </td> <td> <%= f.text_field :title %> </td></tr>
+    <tr><td> Term: </td> <td> <%= f.text_field :title %> </td></tr>
+    <tr><td> Interest Rate: </td> <td> <%= f.text_field :title %> </td></tr>
+</table>
+
+  <%= f.submit "Submit New Loan Information" %>
+
+<% end %>
