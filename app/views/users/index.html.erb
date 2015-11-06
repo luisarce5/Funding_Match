@@ -1,2 +1,8 @@
-<h1 Welcome to the Fund Matching Site /h1>
-<%= @test %>
+<h2> Index Page </h2>
+<ul>
+  <% @users.each do |user| %>
+  <li> <%= link_to "Name: #{user.user_name}", user_path(user) %> </li>
+  <li> Company: <%= user.company_name %> </li>
+  <li> Town: <%= user.town %> </li>
+  <% end %>
+</ul>
