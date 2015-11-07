@@ -1,6 +1,15 @@
 <h1> User Profile </h1>
 <p>
-  <strong>User Name:</strong>
+  <strong>User Type:</strong>
+  <% if @user.borrower == 'true' %>
+    <%= "Borrower" %>
+  <% else %>
+    <%= "Lender"%>
+  <%end%>
+</p>
+
+<p>
+  <strong>Person Name:</strong>
   <%= @user.user_name %>
 </p>
 
@@ -13,6 +22,7 @@
   <strong>Description:</strong>
   <%= @user.user_description %>
 </p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

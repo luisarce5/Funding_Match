@@ -1,9 +1,11 @@
+<%= stylesheet_link_tag("style.css") %>
+
 <h2> Index of User Profiles </h2>
 
-<ul>
-  <% @users.each do |user| %>
-  <li> <%= link_to "Name: #{user.user_name}", user_path(user) %> </li>
-  <li> Company: <%= user.company_name %> </li>
-  <li> Town: <%= user.town %> </li>
-  <% end %>
-</ul>
+    <% @users.each do |user| %>
+    <div class="user_profile">
+    <h3> <%= link_to "Profile of: #{user.user_name}", user_path(user) %> </h3>
+    <p> Company: <%= user.company_name %> </p>
+    <p> Town: <%= user.town %> <p>
+    </div>
+    <% end %>
