@@ -1,8 +1,17 @@
-<h1> Loan Details </h1>
+<h1> Loan Profile Details </h1>
+<p>
+  <strong>Loan ID:</strong>
+  <%= @loan.id %>
+</p>
 
 <p>
   <strong>Title:</strong>
   <%= @loan.title %>
+</p>
+
+<p>
+  <strong>Caterory</strong>
+  <%= @loan.category %>
 </p>
 
 <p>
@@ -21,11 +30,6 @@
 </p>
 
 <p>
-  <strong>Caterory</strong>
-  <%= @loan.category %>
-</p>
-
-<p>
   <strong>Start Date</strong>
   <%= @loan.start_date %>
 </p>
@@ -34,3 +38,6 @@
   <strong>Interest Rate</strong>
   <%= @loan.interest_rate %>
 </p>
+
+<%= link_to 'Edit', edit_loan_path(@loan) %> |
+<%= link_to 'Back to Loan Index', loans_path %>

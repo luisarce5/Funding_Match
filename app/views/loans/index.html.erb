@@ -1,16 +1,15 @@
+<%= stylesheet_link_tag("style.css") %>
 <h2>Loans available for funding </h2>
 
-<ul>
   <% @loans.each do |loan| %>
-  <li>
     <div class="loan">
-      <h3> <strong> Loan posted by </strong> <%= loan.user.user_name %></h3>
+
+    <h3> <%= link_to "Loan Profile Details", loan_path(loan) %> </h3>
+
+      <h3> <strong> Person name: </strong> <%= loan.user.user_name %> </h3>
       <h3> <%= loan.title%> </h3>
-      <h4><strong> Category: </strong> <%= loan.category%> </h4>
-      <p> <strong> Loan Description: </strong> <%= loan.loan_description%></p>
-      <p> <strong> Loan Amount: </strong> <%= loan.loan_amount%></p>
-      <p> <strong> Location: </strong> <%=loan.location%></p>
+      <h4> <strong> Category: </strong> <%= loan.category %> </h4>
+      <p> <strong> Loan Amount: </strong> <%= loan.loan_amount %> </p>
+      <p> <strong> Location: </strong> <%=loan.location %> </p>
     </div>
-  </li>
   <% end %>
-</ul>

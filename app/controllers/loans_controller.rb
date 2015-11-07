@@ -29,24 +29,24 @@ class LoansController < ApplicationController
   def edit
     @loan = Loan.find(params[:id])
   end
-  #
-  # def update
-  #   post = Post.find(params[:id])
-  #   if post.update(post_params)
-  #     redirect_to '/posts'
-  #   else
-  #     redirect_to '/posts/edit'
-  #   end
-  # end
-  #
-  # def destroy
-  #   post = Post.find(params[:id])
-  #   post.destroy
-  #   redirect_to '/posts'
-  # end
-  #
-  # private
-  #
+
+  def update
+    loan = Loan.find(params[:id])
+    if loan.update(loan_params)
+      redirect_to '/loans'
+    else
+      redirect_to '/loans/edit'
+    end
+  end
+
+  def destroy
+    loan = Loan.find(params[:id])
+    loan.destroy
+    redirect_to '/loans'
+  end
+
+  private
+
   def loan_params
     params.require(:loan).permit(
       :title,
