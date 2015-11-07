@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   # root 'users#index'
   root 'users#welcome'
 
-  resources :users
-
   resources :loans
+  
+  resources :users do
+    resources :loans
+  end
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

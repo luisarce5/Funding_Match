@@ -4,9 +4,12 @@
   <% @loans.each do |loan| %>
   <li>
     <div class="loan">
-      <h3><%= " #{loan.title}"%> </h3>
-      <h4><%= " by #{loan.user.user_name}" %></h4>
-      <p><%= loan.loan_description %></p>
+      <h3> <strong> Loan posted by </strong> <%= loan.user.user_name %></h3>
+      <h3> <%= loan.title%> </h3>
+      <h4><strong> Category: </strong> <%= loan.category%> </h4>
+      <p> <strong> Loan Description: </strong> <%= loan.loan_description%></p>
+      <p> <strong> Loan Amount: </strong> <%= loan.loan_amount%></p>
+      <p> <strong> Location: </strong> <%=loan.location%></p>
     </div>
   </li>
   <% end %>

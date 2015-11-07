@@ -6,27 +6,29 @@ class LoansController < ApplicationController
     @loans = Loan.all
   end
 
-  def new
-    @loan = Loan.new
-
-    id = session[:user_id]
-    @user = User.find(id)
-
+  def show
+    @loan = Loan.find(params[:id])
   end
 
-  # def create
-  #   post = Post.create(post_params)
-  #   post.user_id = current_user.id
-  #   if post.save
-  #     redirect_to '/posts'
-  #   else
-  #     redirect_to '/posts/new'
-  #   end
-  # end
-  #
-  # def edit
-  #   @post = Post.find(params[:id])
-  # end
+  def new
+    @loan = Loan.new
+    # id = session[:user_id]
+    # @user = User.find(id)
+  end
+
+  def create
+    loan = Loan.create(loan_params)
+    loan.user_id = current_user.id
+    if loan.save
+      redirect_to '/loans'
+    else
+      redirect_to '/loans/new'
+    end
+  end
+
+  def edit
+    @loan = Loan.find(params[:id])
+  end
   #
   # def update
   #   post = Post.find(params[:id])
@@ -45,10 +47,16 @@ class LoansController < ApplicationController
   #
   # private
   #
-  # def post_params
-  #   params.require(:post).permit(
-  #     :title,
-  #     :body
-  #   )
-  # end
-end
+  def loan_params
+    params.require(:loan).permit(
+      :title,
+      :loan_amount,
+      :loan_description,
+      :location,
+      :category,
+      :start_date,
+      :term,
+      :interest_rate
+    )
+  end
+end # end of class
