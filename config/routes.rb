@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'users#welcome'
 
   resources :loans
-  
+
   resources :users do
     resources :loans
   end
@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  # get '/sorted' => 'loans#sort'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

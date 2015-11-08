@@ -1,4 +1,4 @@
-<h1> Loan Profile Details </h1>
+<h2> Loan Profile Details </h2>
 <p>
   <strong>Loan ID:</strong>
   <%= @loan.id %>
@@ -39,5 +39,8 @@
   <%= @loan.interest_rate %>
 </p>
 
-<%= link_to 'Edit', edit_loan_path(@loan) %> |
+<%= link_to 'Edit', edit_loan_path(@loan) %> ||
 <%= link_to 'Back to Loan Index', loans_path %>
+<%= link_to 'Delete', loan_path(@loan),
+    method: :delete,
+    data: { confirm: 'Are you sure? Delete is permanent.  Please confirm.'} %> 

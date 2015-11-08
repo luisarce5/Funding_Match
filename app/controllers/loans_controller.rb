@@ -4,6 +4,7 @@ class LoansController < ApplicationController
 
   def index
     @loans = Loan.all
+    # @sorted_loans = Loan.search(params[:search])
   end
 
   def show
@@ -44,6 +45,11 @@ class LoansController < ApplicationController
     loan.destroy
     redirect_to '/loans'
   end
+
+  # TRIED TO IMPLEMENT SEARCH FORM BUT DID NOT WORK
+  # def sort
+  #   @sorted_loans = Loan.all
+  # end
 
   private
 
