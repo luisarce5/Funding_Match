@@ -1,36 +1,42 @@
-<h3> Profile of <%= @user.user_name %> </h3>
-<p>
-  <strong>User Type:</strong>
-  <% if @user.borrower == 'true' %>
-    <%= "Borrower" %>
-  <% else %>
-    <%= "Lender"%>
-  <%end%>
-</p>
+<div class="user_profile">
+  <h3> Profile of <%= @user.user_name %> </h3>
+  <p>
+    <strong>User Type:</strong>
+    <% if @user.borrower == 'true' %>
+      <%= "Borrower" %>
+    <% else %>
+      <%= "Lender"%>
+    <%end%>
+  </p>
 
-<p>
-  <strong>Person Name:</strong>
-  <%= @user.user_name %>
-</p>
+  <p>
+    <strong>Person Name:</strong>
+    <%= @user.user_name %>
+  </p>
 
-<p>
-  <strong>Company Name:</strong>
-  <%= @user.company_name %>
-</p>
+  <p>
+    <strong>Company Name:</strong>
+    <%= @user.company_name %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @user.user_description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @user.user_description %>
+  </p>
 
-<p>
-  <strong>Town:</strong>
-  <%= @user.town %>
-</p>
+  <p>
+    <strong>Town:</strong>
+    <%= @user.town %>
+  </p>
+
+</div>
 
 
 <h3> (<%= @user.loans.size %>) Loans posted by <%= @user.user_name %> from <%= @user.company_name %></h3>
+
+
 <%= render partial: 'users/loan', collection: @user.loans %>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> ||
 <%= link_to 'Back to Users Index', users_path %> ||
