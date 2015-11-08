@@ -1,21 +1,26 @@
 <%= stylesheet_link_tag("style.css") %>
 
 <div class ='navigation_bar' >
+  <%= link_to "Home Page", root_path%> ||
   <%= link_to "User Profiles", users_path%>  ||
   <%= link_to "Post New Loan", new_loan_path %> ||
-  <%= link_to "Home Page", root_path%>
+  <%= link_to "Display All Loans", loans_path %> ||
+
 </div>
 
+<%= form_tag(loans_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], size: 50, placeholder: "Search by Category or Title" %>
+<%= submit_tag "Search" %>
+<% end %>
+
 <h2>Loans available for funding </h2>
-
-
 
   <% @loans.each do |loan| %>
   <div class="loans">
     <h3> <%= link_to "Loan Profile Details", loan_path(loan) %> </h3>
 
     <p> <strong> Person name: </strong> <%= loan.user.user_name %> </p>
-    <p> <%= loan.title%> </p>
+    <p> <strong> Title: </strong> <%= loan.title %> </p>
     <p> <strong> Category: </strong> <%= loan.category %> </p>
     <p> <strong> Loan Amount: </strong> <%= loan.loan_amount %> </p>
     <p> <strong> Location: </strong> <%=loan.location %> </p>

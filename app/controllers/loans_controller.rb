@@ -4,8 +4,14 @@ class LoansController < ApplicationController
 
   def index
     @loans = Loan.all
-    # @sorted_loans = Loan.search(params[:search])
+
+    if params[:search]
+      @loans = Loan.search(params[:search]).order("created_at DESC")
+    else
+      @loans = Loan.all.order('created_at DESC')
+    end
   end
+
 
   def show
     @loan = Loan.find(params[:id])

@@ -4,11 +4,8 @@ class Loan < ActiveRecord::Base
   # validates :title, presence: true
   # validates :body, presence: true
 
-  # TRIED TO IMPLEMENT SEARCH FORM BUT DID NOT WORK
-  # def self.search(search)
-  #   if search
-  #     find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-  #   end
-  # end
+  def self.search(search)
+    where("title ILIKE ? OR category ILIKE ?", "%#{search}%", "%#{search}%")
+  end
 
 end
