@@ -4,7 +4,7 @@
   <div id="error message">
     <h2>
       <%= pluralize(@user.errors.count,"error") %>
-      this article from being saved:
+      this User Information from being saved:
     </h2>
     <ul>
       <% @user.errors.full_messages.each do |msg| %>
