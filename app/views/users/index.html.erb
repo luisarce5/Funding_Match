@@ -1,5 +1,10 @@
 <%= stylesheet_link_tag("style.css") %>
 
+<div class ='navigation_bar' >
+  <%= link_to "Loan Profiles", loans_path%>  ||
+  <%= link_to "Home Page", root_path%>
+</div>
+
 <h2> Index of User Profiles </h2>
 
     <% @users.each do |user| %>

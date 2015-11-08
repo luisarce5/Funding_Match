@@ -4,7 +4,7 @@
   <div id="error message">
     <h2>
       <%= pluralize(@loan.errors.count,"error") %>
-      this article from being saved:
+      this Loan information from being saved:
     </h2>
     <ul>
       <% @loan.errors.full_messages.each do |msg| %>

@@ -1,4 +1,4 @@
-<h2> User Profile </h2>
+<h3> Profile of <%= @user.user_name %> </h3>
 <p>
   <strong>User Type:</strong>
   <% if @user.borrower == 'true' %>
@@ -29,7 +29,7 @@
 </p>
 
 
-<h3> Loans posted by <%= @user.user_name %> from <%= @user.company_name %></h3>
+<h3> (<%= @user.loans.size %>) Loans posted by <%= @user.user_name %> from <%= @user.company_name %></h3>
 <%= render partial: 'users/loan', collection: @user.loans %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> ||

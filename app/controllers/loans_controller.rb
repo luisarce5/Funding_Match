@@ -1,6 +1,6 @@
 class LoansController < ApplicationController
 
-  # before_action :authorize, except: [:index]
+  before_action :authorize
 
   def index
     @loans = Loan.all
