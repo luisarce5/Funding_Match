@@ -2,7 +2,7 @@
   <h3> Profile of <%= @user.user_name %> </h3>
   <p>
     <strong>User Type:</strong>
-    <% if @user.borrower == 'true' %>
+    <% if @user.borrower == true %>
       <%= "Borrower" %>
     <% else %>
       <%= "Lender"%>
