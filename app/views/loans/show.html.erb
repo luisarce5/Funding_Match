@@ -1,46 +1,50 @@
-<h2> Loan Profile Details </h2>
-<p>
-  <strong>Loan ID:</strong>
-  <%= @loan.id %>
-</p>
+<div class = 'loan_profile'>
 
-<p>
-  <strong>Title:</strong>
-  <%= @loan.title %>
-</p>
+  <h2> Loan Profile Details </h2>
+  <p>
+    <strong>Loan ID:</strong>
+    <%= @loan.id %>
+  </p>
 
-<p>
-  <strong>Caterory</strong>
-  <%= @loan.category %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @loan.title %>
+  </p>
 
-<p>
-  <strong>Loan Amount:</strong>
-  <%= @loan.loan_amount %>
-</p>
+  <p>
+    <strong>Caterory</strong>
+    <%= @loan.category %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @loan.loan_description %>
-</p>
+  <p>
+    <strong>Loan Amount:</strong>
+    <%= @loan.loan_amount %>
+  </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @loan.location %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @loan.loan_description %>
+  </p>
 
-<p>
-  <strong>Start Date</strong>
-  <%= @loan.start_date %>
-</p>
+  <p>
+    <strong>Location:</strong>
+    <%= @loan.location %>
+  </p>
 
-<p>
-  <strong>Interest Rate</strong>
-  <%= @loan.interest_rate %>
-</p>
+  <p>
+    <strong>Start Date</strong>
+    <%= @loan.start_date %>
+  </p>
+
+  <p>
+    <strong>Interest Rate</strong>
+    <%= @loan.interest_rate %>
+  </p>
+
+</div>
 
 <%= link_to 'Edit', edit_loan_path(@loan) %> ||
 <%= link_to 'Back to Loan Index', loans_path %>
 <%= link_to 'Delete', loan_path(@loan),
     method: :delete,
-    data: { confirm: 'Are you sure? Delete is permanent.  Please confirm.'} %> 
+    data: { confirm: 'Are you sure? Delete is permanent.  Please confirm.'} %>
